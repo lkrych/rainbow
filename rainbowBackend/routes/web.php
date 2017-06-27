@@ -12,7 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome', [
-      'name' => 'World!'
-    ]);
+
+    $tasks = [
+      "Go to the store",
+      "Eat some food",
+      "Go to sleep"
+    ];
+
+    return view('welcome', compact('tasks'));
 });
