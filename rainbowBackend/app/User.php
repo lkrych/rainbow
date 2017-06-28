@@ -17,16 +17,21 @@ class User extends Authenticatable
 
     public function friends()
   	{
-  		return $this->belongsToMany('User', 'friends_users', 'user_id', 'friend_id');
+  		return $this->belongsToMany('App\User', 'friends_users', 'user_id', 'friend_id');
   	}
 
     //only use this function for TEST route
-    public function addFriend(User $user)
+    public function addFriend($user)
   	{
-  		$this->friends()->attach($user->id);
+
+      $friends = $this->friends();
+      //don't allow people to be friends with themselves;
+      if($user->id !== $this->id ){
+  		    $friends->attach($user->id);
+        }
   	}
 
-  	public function removeFriend(User $user)
+  	public function removeFriend($user)
   	{
   		$this->friends()->detach($user->id);
   	}
