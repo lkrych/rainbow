@@ -12,7 +12,7 @@ class User extends Authenticatable
 
     public function updateColor($color)
     {
-      $this->update('favorite_color', $color);
+      $this->update(['favorite_color' => $color]);
     }
 
     public function friends()
@@ -30,6 +30,7 @@ class User extends Authenticatable
   	{
   		$this->friends()->detach($user->id);
   	}
+
 
     /**
      * The attributes that are mass assignable.
