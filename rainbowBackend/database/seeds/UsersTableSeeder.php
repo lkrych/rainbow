@@ -22,13 +22,13 @@ class UsersTableSeeder extends Seeder
       $user_array = array();
       for($i = 0; $i < $userCount; $i++){
         array_push($user_array,
-                 ['name'=>$faker->name,
-                  'email'=>$faker->unique()->email,
+                 ['name'=> $faker->name,
+                  'email'=> $faker->unique()->email,
                   'favorite_color' => $colors[rand(0,count($colors) - 1)],
                   'password'=>'']
           );
       }
-
+      echo implode('|',$user_array[0]);
       //reseed database with users
       foreach($user_array as $user):
         User::create($user);
