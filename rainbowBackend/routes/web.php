@@ -11,14 +11,12 @@
 |
 */
 
-Route::get('/test',  function(Illuminate\Http\Request $request){
+Route::get('/testdata',  function(Illuminate\Http\Request $request){
 
   //pull userCount from queryString
-  $queryArray = $request->query();
-  $seedCount = $queryArray[0];
-  echo $seedCount;
+  $userCount = (int)$request->query('userCount');
 
-  Artisan::call('db:seedCustom ' . $seedCount);
+  Artisan::call('db:seedCustom', ['userCount' => $userCount]);
 });
 
 //fetches all Users from the users table and returns each user in JSON
