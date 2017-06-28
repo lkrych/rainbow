@@ -11,13 +11,14 @@
 |
 */
 
+//fetches all Users from the users table and returns each user in JSON
 Route::get('/', function () {
 
-    $tasks = [
-      "Go to the store",
-      "Eat some food",
-      "Go to sleep"
-    ];
+    $users = App\User::all();
+    return $users;
+});
 
-    return view('welcome', compact('tasks'));
+Route::get('/{userid}', function ($userid) {
+    $user = App\User::find($userid);
+    return $user;
 });
