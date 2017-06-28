@@ -20,6 +20,12 @@ class User extends Authenticatable
   		return $this->belongsToMany('User', 'friends_users', 'user_id', 'friend_id');
   	}
 
+    //only use this function for TEST route
+    public function addFriend(User $user)
+  	{
+  		$this->friends()->attach($user->id);
+  	}
+
   	public function removeFriend(User $user)
   	{
   		$this->friends()->detach($user->id);
