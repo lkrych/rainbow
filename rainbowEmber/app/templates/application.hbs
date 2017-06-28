@@ -5,6 +5,10 @@
 <ul>
   {{#each model as |user|}}
     <li>{{user.name}}'s favorite color is {{user.favoritecolor}}</li>
-    <li>{{user.name}}'s friends are {{user.friends}}</li>
+    <li> {{user.name}}'s friends are
+              {{#each user.friends as |friend|}}
+                {{friend.name}}
+              {{/each}}
+    </li>
     {{/each}}
 </ul>

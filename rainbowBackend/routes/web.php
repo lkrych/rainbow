@@ -54,5 +54,8 @@ Route::get('/user/{userid}/{friendid}', function($userid, $friendid) {
 
 Route::get('/user/{userid}', function ($userid) {
     $user = App\User::find($userid);
+    //fetch friends
+    $friends = $user->friends;
+
     return $user;
 });
