@@ -11,6 +11,17 @@
 |
 */
 
+//helper function to format JSON for Ember
+function formatJSON($data, $type) {
+  $json = array('data' => array());
+  foreach($data as $dataItem):
+    array_push($json['data'], array( 'type' => $type,
+                                   'id' => $dataItem->id,
+                                   'attributes' => $dataItem));
+  endforeach;
+  return $json;
+}
+
 Route::get('/testdata',  function(Illuminate\Http\Request $request){
 
   //pull userCount from queryString
@@ -20,24 +31,24 @@ Route::get('/testdata',  function(Illuminate\Http\Request $request){
 });
 
 //fetches all Users from the users table and returns each user in JSON
-Route::get('/', function () {
+Route::get('/users', function () {
     $users = App\User::all();
-    return $users;
+    return formatJSON($users, 'users');
 });
 
-Route::get('/{userid}/{color}', function($userid, $color) {
+Route::get('/user/{userid}/{color}', function($userid, $color) {
   $user = App\User::find($userid);
   $user->updateColor($color);
   return $user;
 });
 
-Route::get('/{userid}/{friendid}', function($userid, $friendid) {
+Route::get('/user/{userid}/{friendid}', function($userid, $friendid) {
   $user = App\User::find($userid);
   $user->removeFriend($friendid);
   return $user;
 });
 
-Route::get('/{userid}', function ($userid) {
+Route::get('/user/{userid}', function ($userid) {
     $user = App\User::find($userid);
     return $user;
 });
