@@ -18,8 +18,7 @@ Route::get('/test',  function(Illuminate\Http\Request $request){
   $seedCount = $queryArray[0];
   echo $seedCount;
 
-  Artisan::call('db:seed');
-  return redirect('/');
+  Artisan::call('db:seedCustom ' . $seedCount);
 });
 
 //fetches all Users from the users table and returns each user in JSON
