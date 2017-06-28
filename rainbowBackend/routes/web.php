@@ -33,6 +33,10 @@ Route::get('/testdata',  function(Illuminate\Http\Request $request){
 //fetches all Users from the users table and returns each user in JSON
 Route::get('/users', function () {
     $users = App\User::all();
+    //grab all friends from friendship table
+    foreach($users as $user):
+      $friends = $user->friends;
+    endforeach;
     return formatJSON($users, 'users');
 });
 
