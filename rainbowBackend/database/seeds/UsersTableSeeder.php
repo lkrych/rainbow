@@ -28,7 +28,6 @@ class UsersTableSeeder extends Seeder
                   'password'=>'']
           );
       }
-      echo implode('|',$user_array[0]);
       //reseed database with users
       foreach($user_array as $user):
         User::create($user);
