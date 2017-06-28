@@ -1,4 +1,9 @@
+<h1> Rainbow Connection </h1>
+<h3> Everybody has a favorite color.</h3>
 
-{{!-- Feel free to remove this! --}}
 
-{{outlet}}
+<ul>
+  {{#each model as |user|}}
+    <li>{{user.name}} is age {{user.age}}</li>
+    {{/each}}
+</ul>
