@@ -12,7 +12,7 @@ class User extends Authenticatable
 
     public function updateColor($color)
     {
-      $this->update(['favorite_color' => $color]);
+      $this->update(['favoritecolor' => $color]);
     }
 
     public function friends()
@@ -48,7 +48,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'favorite_color'
+        'name', 'email', 'password', 'favoritecolor'
     ];
 
     /**
