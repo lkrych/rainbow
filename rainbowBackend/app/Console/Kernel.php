@@ -4,6 +4,7 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use UsersTableSeeder;
 
 class Kernel extends ConsoleKernel
 {
@@ -36,5 +37,7 @@ class Kernel extends ConsoleKernel
     protected function commands()
     {
         require base_path('routes/console.php');
+
+        //pass
     }
 }

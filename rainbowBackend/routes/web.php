@@ -11,15 +11,21 @@
 |
 */
 
+Route::get('/test',  function(Illuminate\Http\Request $request){
+
+  //pull userCount from queryString
+  $queryArray = $request->query();
+  $seedCount = $queryArray[0];
+  echo $seedCount;
+
+  Artisan::call('db:seed');
+  return redirect('/');
+});
+
 //fetches all Users from the users table and returns each user in JSON
 Route::get('/', function () {
     $users = App\User::all();
     return $users;
-});
-
-Route::get('/{userid}', function ($userid) {
-    $user = App\User::find($userid);
-    return $user;
 });
 
 Route::put('/{userid}/{color}', function($userid, $color) {
@@ -34,22 +40,7 @@ Route::delete('/{userid}/{friendid}', function($userid, $friendid) {
   return $user;
 });
 
-// Route::get('/testdata', 'UsersController#seed');
-Route::get('/testdata',  function(Illuminate\Http\Request $request){
-
-  //pull userCount from queryString
-  $queryArray = $request->all();
-  $seedCount = $queryArray[0];
-
-  Artisan::call('db:seed');
-  // clean and re-initialize database using userCount param
-
-  //redirect to index
-  return redirect('/');
-});
-
-
-Route::get('/reseed', function(){
-  Artisan::call('db:seed');
-  return redirect('/');
+Route::get('/{userid}', function ($userid) {
+    $user = App\User::find($userid);
+    return $user;
 });

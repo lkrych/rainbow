@@ -10,16 +10,17 @@ class UsersTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run($userCount = 20)
     {
       $faker = Faker\Factory::create();
       $colors = array('red','blue','yellow','green','purple','orange', 'yellow-green', 'blue-green', 'blue-violet', 'red-violet', 'red-orange', 'yellow-orange');
       //delete all friendships and users
       DB::table('friends_users')->delete();
       DB::table('users')->delete();
+
       //create new users
       $user_array = array();
-      for($i = 0; $i < 10; $i++){
+      for($i = 0; $i < $userCount; $i++){
         array_push($user_array,
                  ['name'=>$faker->name,
                   'email'=>$faker->unique()->email,
@@ -35,8 +36,16 @@ class UsersTableSeeder extends Seeder
       //reseed friendships by looping through each user and giving them three friends
       $new_users = User::all();
       foreach($new_users as $user):
-          $friend = $new_users[rand(0,count($new_users) - 1)];
-          $user->addFriend($friend);
+          $friendCount = rand(0,50);
+          $friends = array();
+
+          for($i = 0; $i < $friendCount; $i++){
+            $friend = $new_users[rand(0,count($new_users) - 1)];
+            if(!array_key_exists($friend->name, $friends)){
+              $user->addFriend($friend);
+            }
+            $friends[$friend->name] = true;
+          }
       endforeach;
     }
 }

@@ -27,7 +27,12 @@ class User extends Authenticatable
       $friends = $this->friends();
       //don't allow people to be friends with themselves;
       if($user->id !== $this->id ){
+        try{
   		    $friends->attach($user->id);
+        } catch (Exception $e) {
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
+          }
+
         }
   	}
 
