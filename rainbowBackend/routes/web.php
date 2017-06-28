@@ -25,13 +25,13 @@ Route::get('/', function () {
     return $users;
 });
 
-Route::put('/{userid}/{color}', function($userid, $color) {
+Route::get('/{userid}/{color}', function($userid, $color) {
   $user = App\User::find($userid);
   $user->updateColor($color);
   return $user;
 });
 
-Route::delete('/{userid}/{friendid}', function($userid, $friendid) {
+Route::get('/{userid}/{friendid}', function($userid, $friendid) {
   $user = App\User::find($userid);
   $user->removeFriend($friendid);
   return $user;
