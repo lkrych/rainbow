@@ -11,15 +11,21 @@
   padding-left: 2vw;
   padding-right:2vw;
 }
+
 .index-cell{
   padding: 0.5vw 1vw 0.5vw 1vw;
 }
+
 .name-cell{
   padding: 1vw 1vw 1vw 0;
 }
 
 .button-cell{
   padding: 1vw 1vw 1vw 0;
+}
+.home-link{
+  text-align: center;
+  font-size: 18px;
 }
 .red {
   color: red;
