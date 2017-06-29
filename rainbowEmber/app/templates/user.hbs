@@ -49,12 +49,14 @@
   <table align="center">
     <tr class="index-row">
       <th class="index-cell" >Name</th>
+      <th class="index-cell" >Favorite Color</th>
       <th class="index-cell">Remove Friend</th>
     </tr>
 
     {{#each model.friends as |friend|}}
       <tr class="index-row">
         <td class="index-cell"> {{friend.name}} </td>
+        <td class= "index-cell"><span class= {{friend.favoritecolor}}> {{friend.favoritecolor}} </span></td>
         <td class="index-cell"><button type="button" {{action 'deleteFriend' model.id friend.id}}>
            Remove</button> </td>
       </tr>
