@@ -168,3 +168,8 @@ Let's do a brief overview of the project and  assess the successes and the failu
 * This endpoint should clear the database, and populate it with a set of [userCount] users with randomly generated, human first and last names. **complete**
 * Each user should have between 0 and 50 randomly generated connections. **complete**
 * Each user should have a randomly generated favorite color. **complete**
+
+
+## Interested in using rainbow connection?
+
+Clone the repository and intialize both of the technologies! You should use composer for PHP, and NPM for ember. Have fun!
