@@ -1,12 +1,12 @@
 <h1> Rainbow Connection </h1>
-<h3> {{user.name}} has a favorite color. It is {{user.favoritecolor}}</h3>
+<h3> {{model.name}} has a favorite color. It is <span class= {{model.favoritecolor}}> {{model.favoritecolor}} </span></h3>
 
 <p> Friends:
   <ul>
+    {{#each model.friends as |friend|}}
     <li>
-        {{#each user.friends as |friend|}}
-          {{friend.name}}
-        {{/each}}
+        {{friend.name}}
     </li>
+    {{/each}}
   </ul>
 </p>

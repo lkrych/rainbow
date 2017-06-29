@@ -4,12 +4,12 @@
 
 <ul>
   {{#each model as |user|}}
-    <li>{{user.name}}'s favorite color is {{user.favoritecolor}}</li>
+    <li>{{user.name}}'s favorite color is <span class= {{user.favoritecolor}}> {{user.favoritecolor}} </span></li>
     <li> {{user.name}}'s friends are
 
       {{#each user.friends as |friend|}}
         &nbsp;
-        {{#link-to 'User' friend.id}}
+        {{#link-to 'user' friend.id}}
           {{friend.name}}
         {{/link-to}}
       {{/each}}
