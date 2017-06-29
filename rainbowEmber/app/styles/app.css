@@ -7,6 +7,13 @@
   padding-bottom: 2vh;
 }
 
+.index-table{
+  padding-left: 2vw;
+  padding-right:2vw;
+}
+.index-cell{
+  padding: 0.5vw 1vw 0.5vw 1vw;
+}
 .name-cell{
   padding: 1vw 1vw 1vw 0;
 }

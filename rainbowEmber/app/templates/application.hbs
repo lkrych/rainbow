@@ -2,20 +2,29 @@
 <h3 class="subtitle"> Everybody has a favorite color. What is yours?</h3>
 
 
-<ul>
+<table>
+  <tr class="index-table">
+    <th class= "index-cell">Name</th>
+    <th class= "index-cell">Favorite Color</th>
+    <th class= "index-cell">Friends</th>
+  </tr>
   {{#each model as |user|}}
-    <li>{{user.name}}'s favorite color is <span class= {{user.favoritecolor}}> {{user.favoritecolor}} </span></li>
-    <li> {{user.name}}'s friends are
+  <tr class="index-table">
+    <td class= "index-cell">{{user.name}}</td>
 
+    <td class= "index-cell"><span class= {{user.favoritecolor}}> {{user.favoritecolor}} </span></td>
+
+    <td class= "index-cell">
       {{#each user.friends as |friend|}}
-        &nbsp;
         {{#link-to 'user' friend.id}}
           {{friend.name}}
         {{/link-to}}
+        &nbsp;
       {{/each}}
+    </td>
 
-    </li>
-    {{/each}}
-</ul>
+  </tr>
+  {{/each}}
+</table>
 
 {{outlet}}
