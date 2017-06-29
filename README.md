@@ -44,7 +44,7 @@ At the time of writing, I am at work on the infinite pagination feature of the a
 
 #### User view
 
-![User view page]("./rainbowEmber/app/styles/images/rainbowUser.png")
+![User view page]("https://res.cloudinary.com/heab4q3lg/image/upload/v1498752931/userview_vb3w1x.png")
 
 Clicking on any name on the index page leads to the user view. The user view displays a user's favorite color, and a list of all their friends. Currently you can delete a user's friends using a deleteFriend action that is caught by the user Route. This action dispatches an AJAX request and removes the friendship from the Friendship table in the backend.
 
