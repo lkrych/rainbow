@@ -21,7 +21,7 @@ There are two main tables used in the MySQL database, the users table and the fr
 
 #### Index page
 
-![Index page]("https://github.com/lkrych/rainbow/blob/master/rainbowEmber/app/styles/images/rainbowIndex.png")
+![Index page](rainbowIndex.png)
 
 
 The index page is the heart of Rainbow connection, it displays currently signed in users, their favorite colors and links to their friends. This data is being retrieved from the Laravel backend and has some surprising headaches associated with it. Ember does not like the format of the JSON that is returned by default from the Laravel server, so I needed to create a helper function that injects the proper formatting into the default JSON object.
@@ -45,7 +45,7 @@ At the time of writing, I am at work on the infinite pagination feature of the a
 
 #### User view
 
-![User view]("https://github.com/lkrych/rainbow/blob/master/rainbowEmber/app/styles/images/userview.png")
+![User view](userview.png)
 
 Clicking on any name on the index page leads to the user view. The user view displays a user's favorite color, and a list of all their friends. Currently you can delete a user's friends using a deleteFriend action that is caught by the user Route. This action dispatches an AJAX request and removes the friendship from the Friendship table in the backend.
 
