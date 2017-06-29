@@ -1,12 +1,17 @@
-<h1> Rainbow Connection </h1>
-<h3> {{model.name}} has a favorite color. It is <span class= {{model.favoritecolor}}> {{model.favoritecolor}} </span></h3>
+<h1 class = "title"> Rainbow Connection </h1>
+<h3 class= "subtitle"> {{model.name}} has a favorite color. It is <span class= {{model.favoritecolor}}> {{model.favoritecolor}} </span></h3>
 
-<p> Friends:
-  <ul>
+
+  <table align="center">
+    <tr>
+      <th>Name</th>
+      <th>Remove Friend</th>
+    </tr>
+
     {{#each model.friends as |friend|}}
-    <li>
-        {{friend.name}}
-    </li>
+      <tr>
+        <td class="name-cell"> {{friend.name}} </td>
+        <td class="button-cell">   {{#bs-button type="danger"}}Remove Friend{{/bs-button}} </td>
+      </tr>
     {{/each}}
-  </ul>
-</p>
+  </table>
