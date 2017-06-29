@@ -6,7 +6,8 @@ export default Ember.Route.extend({
   },
   actions: {
     deleteFriend(userId, friendId){
-      return Ember.$.getJSON(`${userId}/${friendId}`);
+      Ember.$.getJSON(`${userId}/${friendId}`);
+      this.transitionTo('index');
     }
   }
 });
