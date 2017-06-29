@@ -12,6 +12,7 @@ export default Ember.Route.extend({
     },
     updateColor(userId, color){
       Ember.$.getJSON(`${userId}/color/${color}`);
+      this.refresh();
       this.transitionTo('index');
     }
   }

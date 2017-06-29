@@ -38,6 +38,14 @@ Route::get('/testdata',  function(Illuminate\Http\Request $request){
   $userCount = (int)$request->query('userCount');
 
   Artisan::call('db:seedCustom', ['userCount' => $userCount]);
+
+  $users = App\User::all();
+  //grab all friends from friendship table
+  foreach($users as $user):
+    $friends = $user->friends;
+  endforeach;
+  return formatUsersJSON($users, 'users');
+
 });
 
 //fetches all Users from the users table and returns each user in JSON
