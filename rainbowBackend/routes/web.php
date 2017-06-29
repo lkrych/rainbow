@@ -50,13 +50,13 @@ Route::get('/users', function () {
     return formatUsersJSON($users, 'users');
 });
 
-Route::get('/users/{userid}/{color}', function($userid, $color) {
+Route::get('/user/{userid}/color/{color}', function($userid, $color) {
   $user = App\User::find($userid);
   $user->updateColor($color);
   return $user;
 });
 
-Route::get('/users/{userid}/{friendid}', function($userid, $friendid) {
+Route::get('/user/{userid}/{friendid}', function($userid, $friendid) {
   $user = App\User::find($userid);
   $user->removeFriend($friendid);
   return $user;

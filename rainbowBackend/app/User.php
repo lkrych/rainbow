@@ -38,7 +38,9 @@ class User extends Authenticatable
 
   	public function removeFriend($user)
   	{
-  		$this->friends()->detach($user->id);
+      $friends = $this->friends();
+      echo $user;
+  		$friends->detach($user);
   	}
 
 

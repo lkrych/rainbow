@@ -11,7 +11,8 @@
     {{#each model.friends as |friend|}}
       <tr class="index-row">
         <td class="index-cell"> {{friend.name}} </td>
-        <td class="index-cell">{{#bs-button type="danger"}} Remove Friend{{/bs-button}} </td>
+        <td class="index-cell"><button type="button" {{action 'deleteFriend' model.id friend.id}}>
+           Remove</button> </td>
       </tr>
     {{/each}}
   </table>

@@ -1,26 +1,30 @@
 body {
-  background: url(images/full1.jpg) no-repeat center center fixed;
+  background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url(images/full2.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  height: 100vh;
 }
 
 table {
     -moz-border-radius:10px;
     -webkit-border-radius:10px;
     border-radius:10px;
-    background-color:rgba(255, 255, 255, 0.8);
+    background-color:rgba(175, 175, 175, 0.95);
 }
 
 .title{
   text-align: center;
   font-weight: bold;
+  color: white;
 }
 
 .subtitle{
   text-align: center;
   padding-bottom: 2vh;
+  color: white;
+  font-style: italic;
 }
 .index-table{
   width: 70%;

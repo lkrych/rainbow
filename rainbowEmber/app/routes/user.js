@@ -5,10 +5,8 @@ export default Ember.Route.extend({
     return this.store.findRecord('user', parseInt(userId.userId) );
   },
   actions: {
-    deleteFriend(userId){
-      this.store.findRecord('user', parseInt(userId.userId), { backgroundReload: false }).then(function(post) {
-        post.destroyRecord();
-});
+    deleteFriend(userId, friendId){
+      return Ember.$.getJSON(`${userId}/${friendId}`);
     }
   }
 });
