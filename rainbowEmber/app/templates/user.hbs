@@ -1,5 +1,49 @@
 <h1 class = "title"> Rainbow Connection </h1>
 <h3 class= "subtitle"> {{model.name}} has a favorite color. It is <span class= {{model.favoritecolor}}> {{model.favoritecolor}} </span></h3>
+<h3 class= "change-color"> Care to change {{model.name}}'s favorite color? Do it here
+
+  {{#bs-dropdown as |dd|}}
+    {{#dd.button}}Change color <span class="caret"></span>{{/dd.button}}
+    {{#dd.menu as |menu|}}
+      {{#menu.item}}
+           {{#menu.link-to "index"}}red{{/menu.link-to}}
+      {{/menu.item}}
+      {{#menu.item}}
+          {{#menu.link-to "index"}}blue{{/menu.link-to}}
+      {{/menu.item}}
+      {{#menu.item}}
+          {{#menu.link-to "index"}}yellow{{/menu.link-to}}
+      {{/menu.item}}
+      {{#menu.item}}
+          {{#menu.link-to "index"}}green{{/menu.link-to}}
+      {{/menu.item}}
+      {{#menu.item}}
+          {{#menu.link-to "index"}}orange{{/menu.link-to}}
+      {{/menu.item}}
+      {{#menu.item}}
+          {{#menu.link-to "index"}}purple{{/menu.link-to}}
+      {{/menu.item}}
+      {{#menu.item}}
+        {{#menu.link-to "index"}}red-orange{{/menu.link-to}}
+      {{/menu.item}}
+      {{#menu.item}}
+        {{#menu.link-to "index"}}red-violet{{/menu.link-to}}
+      {{/menu.item}}
+      {{#menu.item}}
+        {{#menu.link-to "index"}}blue-green{{/menu.link-to}}
+      {{/menu.item}}
+      {{#menu.item}}
+        {{#menu.link-to "index"}}blue-violet{{/menu.link-to}}
+      {{/menu.item}}
+      {{#menu.item}}
+        {{#menu.link-to "index"}}yellow-green{{/menu.link-to}}
+      {{/menu.item}}
+      {{#menu.item}}
+        {{#menu.link-to "index"}}yellow-orange{{/menu.link-to}}
+      {{/menu.item}}
+    {{/dd.menu}}
+  {{/bs-dropdown}}
+</h3>
 
 
   <table align="center">
@@ -16,7 +60,8 @@
       </tr>
     {{/each}}
   </table>
-
-  {{#link-to 'index' }}
-    <p class="home-link">Go back to the home page</p>
-  {{/link-to}}
+  <div class="index-link">
+    {{#link-to 'index' }}
+      <p class="home-link">Go back to the home page</p>
+    {{/link-to}}
+  </div>
