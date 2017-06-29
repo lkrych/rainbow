@@ -16,7 +16,11 @@
   </tr>
   {{#each model as |user|}}
   <tr class="index-row">
-    <td class= "index-cell">{{user.name}}</td>
+    <td class= "index-cell">
+      {{#link-to 'user' user.id}}
+        {{user.name}}
+      {{/link-to}}
+    </td>
 
     <td class= "index-cell"><span class= {{user.favoritecolor}}> {{user.favoritecolor}} </span></td>
 
