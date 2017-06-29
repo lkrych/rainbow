@@ -2,14 +2,14 @@
 <h3 class="subtitle"> Everybody has a favorite color. What is yours?</h3>
 
 
-<table>
-  <tr class="index-table">
+<table class="index-table" align="center">
+  <tr class="index-row">
     <th class= "index-cell">Name</th>
     <th class= "index-cell">Favorite Color</th>
     <th class= "index-cell">Friends</th>
   </tr>
   {{#each model as |user|}}
-  <tr class="index-table">
+  <tr class="index-row">
     <td class= "index-cell">{{user.name}}</td>
 
     <td class= "index-cell"><span class= {{user.favoritecolor}}> {{user.favoritecolor}} </span></td>

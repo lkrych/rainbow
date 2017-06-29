@@ -1,13 +1,31 @@
+body {
+  background: url(images/full1.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+table {
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px;
+    background-color:rgba(255, 255, 255, 0.8);
+}
+
 .title{
   text-align: center;
+  font-weight: bold;
 }
 
 .subtitle{
   text-align: center;
   padding-bottom: 2vh;
 }
-
 .index-table{
+  width: 70%;
+}
+.index-row{
   padding-left: 2vw;
   padding-right:2vw;
 }
@@ -16,13 +34,6 @@
   padding: 0.5vw 1vw 0.5vw 1vw;
 }
 
-.name-cell{
-  padding: 1vw 1vw 1vw 0;
-}
-
-.button-cell{
-  padding: 1vw 1vw 1vw 0;
-}
 .home-link{
   text-align: center;
   font-size: 18px;

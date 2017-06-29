@@ -3,15 +3,15 @@
 
 
   <table align="center">
-    <tr>
-      <th>Name</th>
-      <th>Remove Friend</th>
+    <tr class="index-row">
+      <th class="index-cell" >Name</th>
+      <th class="index-cell">Remove Friend</th>
     </tr>
 
     {{#each model.friends as |friend|}}
-      <tr>
-        <td class="name-cell"> {{friend.name}} </td>
-        <td class="button-cell">   {{#bs-button type="danger"}}Remove Friend{{/bs-button}} </td>
+      <tr class="index-row">
+        <td class="index-cell"> {{friend.name}} </td>
+        <td class="index-cell">{{#bs-button type="danger"}} Remove Friend{{/bs-button}} </td>
       </tr>
     {{/each}}
   </table>
