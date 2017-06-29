@@ -1,0 +1,12 @@
+<h1> Rainbow Connection </h1>
+<h3> {{user.name}} has a favorite color. It is {{user.favoritecolor}}</h3>
+
+<p> Friends:
+  <ul>
+    <li>
+        {{#each user.friends as |friend|}}
+          {{friend.name}}
+        {{/each}}
+    </li>
+  </ul>
+</p>
