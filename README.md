@@ -3,7 +3,7 @@
 
 ### Overview
 
-Rainbow connection is a social network that keeps things private and simple. You only need to disclose your name and your favorite color.
+Rainbow connection is a social network that keeps things simple. You only need to disclose your name and your favorite color.
 
 With an exceedingly usable interface, Rainbow Connection is fast becoming one of the most essential ways to share on the web. Join Rainbow Connection and add a little more color into your life.
 
@@ -15,7 +15,7 @@ Rainbow Connection is a sample application built with a PHP laravel/ MySQL backe
 
 The project is separated into frontend and backend files. This clean split makes it easy to cleave off the components that one might use in the future. Say we transition into a rails backend, all we will need to do to plug it in is change the proxy of the ember server. Likewise, if we decide to move onto a React frontend, we can easily point it to our Laravel server.
 
-There are two main tables used in the MySQL database, the users table and the friendships table. The users table holds individual records for each user, their name, email and favorite color. The friendships table represents many-to-many relationships between users, and is composed of two integer fields, user_id, and friend_id, which point to the users table.
+There are two main tables used in the MySQL database, the users table and the friendships table. The users table holds individual records for each user, their name, and favorite color. The friendships table represents many-to-many relationships between users, and is composed of two integer fields, user_id, and friend_id, which point to the users table.
 
 ### Features
 
@@ -24,7 +24,7 @@ There are two main tables used in the MySQL database, the users table and the fr
 ![Index page](https://github.com/lkrych/rainbow/blob/master/rainbowEmber/app/styles/images/rainbowIndex.png?raw=true)
 
 
-The index page is the heart of Rainbow connection, it displays currently signed in users, their favorite colors and links to their friends. This data is being retrieved from the Laravel backend and has some surprising headaches associated with it. Ember does not like the format of the JSON that is returned by default from the Laravel server, so I needed to create a helper function that injects the proper formatting into the default JSON object.
+The index page is the heart of Rainbow connection, it displays currently signed up users, their favorite colors and links to their friends. This data is being retrieved from the Laravel backend and has some surprising headaches associated with it. Ember does not like the format of the JSON that is returned by default from the Laravel server, so I needed to create a helper function that injects the proper formatting into the default JSON object.
 
 ```php
 // rainbowBackend/routes/web.php
@@ -168,3 +168,8 @@ Let's do a brief overview of the project and  assess the successes and the failu
 * This endpoint should clear the database, and populate it with a set of [userCount] users with randomly generated, human first and last names. **complete**
 * Each user should have between 0 and 50 randomly generated connections. **complete**
 * Each user should have a randomly generated favorite color. **complete**
+
+
+## Interested in using rainbow connection?
+
+Clone the repository and intialize both of the technologies! You should use composer for PHP, and NPM for ember. Have fun!
